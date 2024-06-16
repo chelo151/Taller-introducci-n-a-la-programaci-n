@@ -29,7 +29,7 @@ data_scale <- data %>%
 
 head(data_scale) #Mostrar las primeras filas del data frame data_scale
 
-## Comprovar la normalidad de los datos 
+## Comprobar la normalidad de los datos 
 
 library("nortest") # Cargar la libreria para poder utilizar la función ad.test
 
