@@ -1,8 +1,9 @@
 # Taller-introduccion-a-la-programacion
 
 
-## Cargar y Preprocesar los Datosrm(list=ls()) #Borrar el entorno de trabajo
+## Cargar y Preprocesar los Datos
 
+rm(list=ls()) #Borrar el entorno de trabajo
 library("readr") #Cargar libreria readr para abrir archivos csv
 library("dplyr") #Cargar libreria dplyr 
 
@@ -12,12 +13,12 @@ head(data)  #Mostrar las primeras filas del data frame data
 
 data$id <- as.factor(data$id) # Convertir la columna id a factor
 
-# Verificar si hay valores NA y eliminarlos
+#### Verificar si hay valores NA y eliminarlos
 colSums(is.na(data)) 
 data <- data[complete.cases(data),]
 any(is.na(data))
 
-# Estandarizar todas las columnas numéricas 
+##### Estandarizar todas las columnas numéricas 
 data_scale <- data %>%
   mutate(across(where(is.numeric), scale))
 
